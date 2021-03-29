@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Inicio"
+        android:visible="true" />
+    <item
+        android:id="@+id/registerFragment"
+        android:icon="@drawable/ic_baseline_how_to_reg_24"
+        android:title="Registrar Paciente"
+        android:visible="true" />
+    <item android:title="Reservar Cita"
+        android:icon="@drawable/ic_baseline_touch_app_24"
+        android:id="@+id/reserveFragment"/>
+
+</menu>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clinica_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.clinica.myapplication.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/sedeFragment"
+        android:name="com.clinica.myapplication.SedeFragment"
+        android:label="fragment_sede"
+        tools:layout="@layout/fragment_sede" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.clinica.myapplication.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.clinica.myapplication.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/reserveFragment"
+        android:name="com.clinica.myapplication.ReserveFragment"
+        android:label="fragment_reserve"
+        tools:layout="@layout/fragment_reserve" />
+</navigation>
