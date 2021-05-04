@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="iniciodegradado">#04F4FB</color>
     <color name="findegradado">#306466</color>
+    <color name="maiz">#E3CD6B</color>
+    <color name="gris">#858582</color>
 </resources>

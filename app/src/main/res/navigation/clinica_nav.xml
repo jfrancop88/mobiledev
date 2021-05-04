@@ -35,4 +35,9 @@
         android:name="com.clinica.myapplication.SesionFragment"
         android:label="fragment_sesion"
         tools:layout="@layout/fragment_sesion" />
+    <fragment
+        android:id="@+id/registrarPacienteFrag"
+        android:name="com.clinica.myapplication.BlankFragment"
+        android:label="fragment_registrapacient"
+        tools:layout="@layout/fragment_registrapacient" />
 </navigation>

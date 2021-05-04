@@ -1,45 +1,67 @@
 package com.clinica.myapplication;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
+
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.View;
+import android.widget.Button;
+
+import com.clinica.myapplication.entidades.Paciente;
+import com.clinica.myapplication.modelo.DAODoctor;
+import com.clinica.myapplication.modelo.DAOEspecialidad;
+import com.clinica.myapplication.modelo.DAOPaciente;
+
 
 public class Clinica_Cruz extends AppCompatActivity {
+
+    Button registrar;
+    Button login;
+    Button admin;
+
+    DAOPaciente daoPaciente = new DAOPaciente(this);
+    DAODoctor daoDoctor = new DAODoctor(this);
+    DAOEspecialidad daoEspecialidad = new DAOEspecialidad(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clinica__cruz);
-        cargarFragmento(new HomeFragment());
-        BottomNavigationView ClinicaView = findViewById(R.id.BottonNavigationViewClinica);
-        ClinicaView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        daoPaciente.abrirBD();
+        daoDoctor.abrirDB();
+        daoEspecialidad.abrirDB();
+
+
+        registrar = (Button) findViewById(R.id.registro);
+        registrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.homeFragment:
-                        cargarFragmento(new HomeFragment());
-                        break;
-                    case R.id.registerFragment:
-                        cargarFragmento(new RegisterFragment());
-                        break;
-                    case R.id.reserveFragment:
-                        cargarFragmento(new ReserveFragment());
-                        break;
-                   // case R.id.sedeFragment:
-                     //   cargarFragmento(new SedeFragment());
-                       // break;
-                }
-                return false;
+            public void onClick(View v) {
+                Intent intent = new Intent(Clinica_Cruz.this, AgregarPaciente.class);
+                startActivity(intent);
             }
         });
+
+        admin = (Button) findViewById((R.id.btn_admin));
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Clinica_Cruz.this, ClinicaSqlite.class);
+                startActivity(intent);
+            }
+        });
+
+        login = (Button) findViewById(R.id.sesion);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Clinica_Cruz.this, IniciarSesion.class));
+            }
+        });
+
     }
-    private void cargarFragmento (Fragment fragment){
-        getSupportFragmentManager().beginTransaction().replace(R.id.containerClinica, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
-    }
+
 }

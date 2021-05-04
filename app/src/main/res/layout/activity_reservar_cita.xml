@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/maiz"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Nombres y apellidos"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/txt_BuscarSede"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="40dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_domain_24"
+        android:padding="10dp"
+        android:drawablePadding="12dp"
+        android:inputType="textPersonName"
+        android:hint="Buscar Sede"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    <EditText
+        android:id="@+id/txt_BuscarEspecialidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="40dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_medical_services_24"
+        android:padding="10dp"
+        android:drawablePadding="12dp"
+        android:inputType="textPersonName"
+        android:hint="Buscar Especialidad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_BuscarSede" />
+    <EditText
+        android:id="@+id/txt_BuscarMedico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="40dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_perm_contact_calendar_24"
+        android:padding="10dp"
+        android:drawablePadding="12dp"
+        android:inputType="textPersonName"
+        android:hint="Buscar Médico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_BuscarEspecialidad" />
+
+    <EditText
+        android:id="@+id/date_BuscarFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+        android:padding="10dp"
+        android:ems="10"
+        android:hint="Buscar Fecha"
+        android:focusable="false"
+        android:clickable="true"
+        android:drawablePadding="12dp"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_BuscarMedico" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_BuscarFecha" />
+
+    />
+
+    <Button
+        android:id="@+id/btn_Reservar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/gris"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="15dp"
+        android:text="Reservar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

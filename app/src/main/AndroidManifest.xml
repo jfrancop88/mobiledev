@@ -7,6 +7,7 @@
          location permissions for the "MyLocation" functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +16,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ClinicaCruz">
-        <activity android:name=".Clinica_Cruz">
+        <activity android:name=".ActualizarPaciente"
+            android:label="Actualizar Paciente"
+            android:parentActivityName=".Clinica_Cruz"></activity>
+        <activity android:name=".IniciarSesion"
+            android:label="Inicio de Sesión"
+            android:parentActivityName=".Clinica_Cruz"></activity>
+        <activity android:name=".InicioPaciente"
+            android:label="Mi Portal"
+            android:parentActivityName=".Clinica_Cruz"></activity>
+        <activity android:name=".ReservarCita"
+            android:label="Reserve su cita"
+            android:parentActivityName=".Clinica_Cruz"></activity>
+        <activity
+            android:name=".AgregarPaciente"
+            android:label="Registrarse como Paciente"
+            android:parentActivityName=".Clinica_Cruz" />
+        <activity
+            android:name=".ClinicaSqlite"
+            android:label="Lista de Pacientes"
+            android:parentActivityName=".Clinica_Cruz"></activity>
+        <activity
+            android:name=".Clinica_Cruz"
+            android:label="Clínica Cruz"> <!-- Pagina Principal -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,9 +57,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
